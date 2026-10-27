@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WorldMap from '../components/WorldMap.astro';
 import { readings } from '../data/readings';
 import { orgs } from '../data/orgs';
 import { clusters } from '../data/clusters';
@@ -13,6 +14,7 @@ const regionCount = new Set(orgs.filter((o) => o.name_verified).map((o) => o.reg
     <h1>PA 103 Reviewer</h1>
     <p class="lead">Theories of regional integration, and the organizations that put them to the test.</p>
   </section>
+  <WorldMap />
   <div class="doors">
     <a class="door t" href="/theories/">
       <small>Part A</small>

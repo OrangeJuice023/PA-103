@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PillarTabs from '../../components/PillarTabs.astro';
 import { theoryTabs } from '../../data/tabs';
-import { clusters } from '../../data/clusters';
+import ClusterLists from '../../components/ClusterLists.astro';
 import { readings } from '../../data/readings';
 ---
 <BaseLayout title="Theories" pillar="theories" crumbs={[{ label: 'Theories' }]}>
@@ -18,12 +18,6 @@ import { readings } from '../../data/readings';
     <li>Which author does it build on or argue against?</li>
   </ol>
   <h2>The eight clusters</h2>
-  <div class="grid">
-    {clusters.map((c) => (
-      <a class="card theory" style={`--dot:${c.color}`} href={`/theories/clusters/${c.slug}/`}>
-        <b>{c.name}</b><small>{c.blurb} ({readings.filter((r) => r.cluster === c.slug).length} readings)</small>
-      </a>
-    ))}
-  </div>
-  <p class="banner">The cluster grouping is a draft from the North Star. Confirm it against the professor's slides.</p>
+  <ClusterLists />
+  <p class="banner" style="margin-top:28px">The cluster grouping is a draft from the North Star. Confirm it against the professor's slides.</p>
 </BaseLayout>

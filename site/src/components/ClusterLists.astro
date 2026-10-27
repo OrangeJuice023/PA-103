@@ -1,0 +1,22 @@
+---
+import { clusters } from '../data/clusters';
+import { readings } from '../data/readings';
+---
+{clusters.map((c) => (
+  <section class="cluster-block">
+    <h2 id={c.slug}><span class="dot" style={`--dot:${c.color}`}></span><a href={`/theories/clusters/${c.slug}/`}>{c.name}</a></h2>
+    <p class="blurb">{c.blurb}</p>
+    <ul class="rows">
+      {readings.filter((r) => r.cluster === c.slug).map((r) => (
+        <li>
+          <a href={`/theories/readings/${r.slug}/`}>
+            <span class="n">{r.num}</span>
+            <span class="t"><b>{r.author.split(',')[0]} ({r.year})</b><span>{r.title}</span></span>
+            {r.notes === 'web' && <span class="tag">WEB</span>}
+            <span class="chev" aria-hidden="true">&rsaquo;</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+))}

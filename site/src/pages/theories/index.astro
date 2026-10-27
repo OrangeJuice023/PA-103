@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import { theoryTabs } from '../../data/tabs';
+import { clusters } from '../../data/clusters';
+import { readings } from '../../data/readings';
+---
+<BaseLayout title="Theories" pillar="theories" crumbs={[{ label: 'Theories' }]}>
+  <h1>Theories of regional integration</h1>
+  <p class="lead">{readings.length} readings. Readings 1 to 18 were covered in class; 19 to 29 are not presented yet.</p>
+  <PillarTabs tabs={theoryTabs} />
+  <h2>Five questions for every reading</h2>
+  <ol class="ui">
+    <li>What is "integration" for this author (process, end state, or both)?</li>
+    <li>What drives it (spillover, elites, transactions, security, markets, interdependence)?</li>
+    <li>Who are the actors (states, supranational bodies, interest groups, communities)?</li>
+    <li>How is it measured or tested?</li>
+    <li>Which author does it build on or argue against?</li>
+  </ol>
+  <h2>The eight clusters</h2>
+  <div class="grid">
+    {clusters.map((c) => (
+      <a class="card theory" style={`--dot:${c.color}`} href={`/theories/clusters/${c.slug}/`}>
+        <b>{c.name}</b><small>{c.blurb} ({readings.filter((r) => r.cluster === c.slug).length} readings)</small>
+      </a>
+    ))}
+  </div>
+  <p class="banner">The cluster grouping is a draft from the North Star. Confirm it against the professor's slides.</p>
+</BaseLayout>

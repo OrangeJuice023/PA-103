@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PillarTabs from '../../../components/PillarTabs.astro';
+import Cards from '../../../components/Cards.astro';
+import { theoryTabs } from '../../../data/tabs';
+import { clusters } from '../../../data/clusters';
+import { readings } from '../../../data/readings';
+---
+<BaseLayout title="Theories by cluster" pillar="theories" crumbs={[{ label: 'Theories', href: '/theories/' }, { label: 'By cluster' }]}>
+  <h1>Theories by cluster</h1>
+  <PillarTabs tabs={theoryTabs} />
+  {clusters.map((c) => (
+    <section>
+      <h2 id={c.slug}><span class="dot" style={`--dot:${c.color}`}></span><a href={`/theories/clusters/${c.slug}/`}>{c.name}</a></h2>
+      <p class="lead">{c.blurb}</p>
+      <div class="grid">{readings.filter((r) => r.cluster === c.slug).map((r) => <Cards reading={r} />)}</div>
+    </section>
+  ))}
+</BaseLayout>

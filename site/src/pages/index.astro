@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { readings } from '../data/readings';
+import { orgs } from '../data/orgs';
+import { clusters } from '../data/clusters';
+
+const fromWeb = readings.filter((r) => r.notes === 'web').length;
+const verified = orgs.filter((o) => o.name_verified).length;
+const regionCount = new Set(orgs.filter((o) => o.name_verified).map((o) => o.region)).size;
+---
+<BaseLayout title="PA 103 Reviewer" description="Study reviewer for PA 103: theories of regional integration and regional organizations.">
+  <h1>PA 103 Reviewer</h1>
+  <p class="lead">Two parts of the course, linked to each other. Pick a door, or press <kbd>/</kbd> to search.</p>
+  <div class="doors">
+    <a class="door t" href="/theories/">
+      <h2>Theories</h2>
+      <p>{readings.length} readings in {clusters.length} clusters, from Mitrany to Tarzi.</p>
+    </a>
+    <a class="door o" href="/organizations/">
+      <h2>Regional Organizations</h2>
+      <p>{orgs.length} organizations in {regionCount} regions, each tied back to a theory.</p>
+    </a>
+  </div>
+  <h2>Where the notes stand</h2>
+  <ul class="ui">
+    <li>{readings.length} readings: {readings.length - fromWeb} have notes from class material (slides or the reviewer PDF), {fromWeb} are outside research (WEB).</li>
+    <li>{verified} organizations have a drafted WEB note. {orgs.length - verified} are placeholders because the name is not confirmed yet.</li>
+    <li>Nothing is marked DONE yet. Everything here is a draft to check against the professor's slides.</li>
+  </ul>
+</BaseLayout>

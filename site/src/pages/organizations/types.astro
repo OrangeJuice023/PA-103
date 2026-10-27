@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import Cards from '../../components/Cards.astro';
+import { orgTabs } from '../../data/tabs';
+import { types, orgs } from '../../data/orgs';
+---
+<BaseLayout title="Organizations by type" pillar="organizations" crumbs={[{ label: 'Regional Organizations', href: '/organizations/' }, { label: 'By type' }]}>
+  <h1>Organizations by type</h1>
+  <PillarTabs tabs={orgTabs} />
+  <p class="lead">Types are a working label from the one-line descriptions in the North Star, not an official classification.</p>
+  {types.map((t) => (
+    <section>
+      <h2 id={t.slug}>{t.name}</h2>
+      <div class="grid">{orgs.filter((o) => o.type === t.slug).map((o) => <Cards org={o} />)}</div>
+    </section>
+  ))}
+</BaseLayout>

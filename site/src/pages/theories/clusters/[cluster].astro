@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Cards from '../../../components/Cards.astro';
+import { clusters } from '../../../data/clusters';
+import { readings } from '../../../data/readings';
+import { orgs } from '../../../data/orgs';
+
+export function getStaticPaths() {
+  return clusters.map((c) => ({ params: { cluster: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+const rs = readings.filter((r) => r.cluster === c.slug);
+const nums = new Set(rs.map((r) => r.num));
+const related = orgs.filter((o) => o.readings.some((n) => nums.has(n)));
+---
+<BaseLayout title={c.name} pillar="theories" crumbs={[{ label: 'Theories', href: '/theories/' }, { label: 'By cluster', href: '/theories/clusters/' }, { label: c.name }]}>
+  <h1><span class="dot" style={`--dot:${c.color}`}></span>{c.name}</h1>
+  <p class="lead">{c.blurb}</p>
+  <p class="banner">Cluster grouping is a draft from the North Star. Confirm it against the professor's slides.</p>
+  <h2>Readings</h2>
+  <div class="grid">{rs.map((r) => <Cards reading={r} />)}</div>
+  <h2>Seen in these organizations</h2>
+  {related.length ? <div class="grid">{related.map((o) => <Cards org={o} />)}</div> : <p>No organization is linked to this cluster yet.</p>}
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import { clusterBySlug } from '../data/clusters';
+import { typeBySlug } from '../data/orgs';
+import type { Reading } from '../data/readings';
+import type { Org } from '../data/orgs';
+
+const { reading, org } = Astro.props as { reading?: Reading; org?: Org };
+---
+{reading && (
+  <a class="card theory" style={`--dot:${clusterBySlug(reading.cluster).color}`} href={`/theories/readings/${reading.slug}/`}>
+    <b>#{reading.num} {reading.author.split(',')[0]} ({reading.year})</b>
+    <small>{reading.title}</small>
+  </a>
+)}
+{org && (
+  <a class="card org" href={`/organizations/${org.slug}/`}>
+    <b>{org.acronym}{org.name_verified ? '' : ' (unverified)'}</b>
+    <small>{org.name}{org.founded ? `, ${org.founded}` : ''} &middot; {typeBySlug(org.type).name}</small>
+  </a>
+)}

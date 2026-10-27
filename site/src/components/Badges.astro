@@ -1,0 +1,33 @@
+---
+import type { Reading } from '../data/readings';
+import type { Org } from '../data/orgs';
+
+const { reading, org } = Astro.props as { reading?: Reading; org?: Org };
+---
+<div class="badges">
+  {reading && (
+    <>
+      <span class={`badge ${reading.covered === 'class' ? 'class' : ''}`}>{reading.covered === 'class' ? 'CLASS: covered in lecture' : 'Not presented yet'}</span>
+      {reading.notes === 'web' && <span class="badge web">WEB: outside research</span>}
+      {reading.notes === 'slides' && <span class="badge slides">Notes from class slides</span>}
+      {reading.notes === 'reviewer-pdf' && <span class="badge slides">Notes from reviewer PDF</span>}
+      <span class="badge">DRAFT</span>
+    </>
+  )}
+  {org && (
+    <>
+      {org.name_verified ? <span class="badge web">WEB: outside research</span> : <span class="badge flag">FLAG: name unverified</span>}
+      <span class="badge">{org.name_verified ? 'DRAFT' : 'TODO'}</span>
+      <span class="badge">Reporter: {org.reporter}</span>
+    </>
+  )}
+</div>
+{reading && reading.notes === 'web' && (
+  <p class="banner">Outside research, not from class slides. Do not present it as professor content. Check against the slides before using it for an exam.</p>
+)}
+{org && !org.name_verified && (
+  <p class="banner">The name of this organization is not confirmed (see the open questions in 00_NORTH_STAR.md). Nothing is written about it on purpose.</p>
+)}
+{org && org.name_verified && (
+  <p class="banner">Outside research draft. Replace it with the group's report once they present.</p>
+)}

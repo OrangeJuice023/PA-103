@@ -1,0 +1,125 @@
+
+
+===== PAGE 1 =====
+PA 103 | REVIEWER Béla Balassa, The Theory of Economic Integration 1961 Cooperation, integration, governance START HERE Wag mo munang i-memorize yung five levels. Ang tanong kasi ni Balassa is hindi "ano ang FTA," kundi "ano ang nagbabago kapag humihina ang border?" At para sa PA 103 ano ang nangyayari sa governance kapag lumalalim ang economic integration?
+
+1. The one sentence answer The deeper the integration, the wider the scope of shared commitments, and the greater the need for shared governance. Kung isa lang ang matatandaan mo sa buong topic na ito, yun na yun. Lahat ng iba dito ay paliwanag lang kung bakit totoo yung sentence na yan.
+
+2. Who is Balassa
+• Hungarian economist, 1928 to 1991.
+• Born in Budapest, studied law there, left after the 1956 uprising, then earned his doctorate at Yale.
+• Professor at Johns Hopkins, consultant to the World Bank.
+• Also known for revealed comparative advantage and the Balassa-Samuelson effect. Important context: hindi siya purely Europeanist. Trade and development economist siya, so ang ginawa niya sa 1961 ay hindi paglalarawan ng isang organisasyon, kundi paggawa ng systematic framework.
+
+3. What Balassa means by integration He defines it in two ways at once, and pareho silang pinapatanong sa exam.
+• As a process: measures designed to abolish discrimination between economic units belonging to different national states.
+• As a state of affairs: the absence of those forms of discrimination between national economies.
+
+===== PAGE 2 =====
+Note on the word "discrimination." Hindi ito yung social meaning na alam natin. Ang ibig sabihin lang nito ay iba ang trato mo sa isang bansa kaysa sa iba: ibang tariff, ibang market access, ibang rules. THE FRIENDSHIP ANALOGY Isipin mo yung barkada mo. Hindi naman pare-pareho yung closeness mo sa lahat, di ba? May kaibigan kang pwedeng pumunta sa bahay mo anytime, may iba na kailangan pa mag-message muna. Hindi naman unfair yun, iba lang talaga yung rules, access, at closeness. Ganun din ang mga bansa. Integration means sinasadya nilang tanggalin yung ibang differences na yun sa piling partners.
+
+4. Cooperation is not integration Balassa says the distinction is both quantitative and qualitative. Madalas ito yung una nilang tinatanong, so tandaan mo:
+• Cooperation involves actions that lessen discrimination. Example: "Let us discuss our trade policies."
+• Integration involves measures that suppress or abolish particular forms of discrimination. Example: "Let us remove these barriers between us." So ang tanong hindi ay kung gaano sila kadalas mag-usap. Ang tanong ay anong barrier ba talaga ang natanggal.
+
+5. The five levels Each level keeps everything from the level before it and adds one new thing. Every time you move up, ask yourself one question: ano na naman ang ini-integrate natin ngayon? What gets added FTA Customs Union Common Market Economic Union Total Integration Internal trade barriers removed yes yes yes yes yes Common external tariff no yes yes yes yes Free movement of labour and capital no no yes yes yes Harmonised economic policy no no no yes yes Policy unification plus supranational authority no no no no yes
+
+===== PAGE 3 =====
+Level 1 Free Trade Area
+• Members remove tariffs and quantitative restrictions among themselves.
+• Each member keeps its own tariffs against non-members.
+• Example: USMCA United States, Mexico, Canada). Preferential access sa isa't isa, pero walang iisang external trade policy. The rules of origin problem Ito yung part na dapat mong alam kasi ito yung concrete na paraan para makilala mo ang FTA sa customs union. Sabihin nating 5 percent ang tariff ng Country A sa isang produkto galing sa labas, tapos 20 percent naman sa Country B. Kung papasok yung produkto sa Country A, tapos malaya siyang makakapasok sa Country B kasi magkasama sila sa FTA, ano na ang pumipigil sa lahat na gamitin ang Country A bilang back door? Answer: rules of origin. These determine which goods actually qualify for preferential treatment under the agreement. A customs union does not need them, kasi iisa lang naman ang external tariff nila. Level 2 Customs Union
+• Everything in an FTA, plus a common external tariff.
+• Example: the EU customs union. No internal customs duties, one common tariff on goods entering from outside.
+• Governance point: may sinuko nang discretion ang isang bansa dito. Kung iisa ang external tariff, may dapat magdesisyon kung ano yun. Kaya may tanong na: sino ang magdedesisyon ng common rule? Trade creation and trade diversion Viner
+• Trade creation: production shifts from a more expensive producer to a cheaper member. Potentially an efficiency gain.
+• Trade diversion: trade shifts away from a cheaper outsider to a more expensive member, simply because the member gets preferential treatment and the outsider faces the common external tariff. Ang lesson dito: huwag mong sabihing "integration is always good because trade increases." May gains, pero may distortions din. Level 3 Common Market
+• Everything in a customs union, plus the removal of restrictions on factor movements.
+
+===== PAGE 4 =====
+• Hindi na lang goods ang pinag-uusapan. Pati na rin labour at capital, at yung kakayahan ng economic activity na lumipat.
+• Example: the EU Single Market, built around free movement of goods, services, people, and capital. Nagbabago yung tanong. Dati, "pwede ba akong magbenta doon?" Ngayon, "pwede ba akong magtrabaho doon, mag-invest doon, magtayo ng negosyo doon?" Level 4 Economic Union
+• Everything in a common market, plus some degree of harmonisation of national economic policies.
+• Bakit kailangan? Kasi kapag magkakabit na ang mga ekonomiya, yung tax policy ng Country A ay makakaapekto na sa Country B. Hindi na purely national ang consequences ng national policy mo.
+• Example: the EU coordinates and harmonises across many economic areas, although it is not a perfect match for Balassa's ideal type. Sabihin mo yung qualification na yan, importante yun. Level 5 Total Economic Integration
+• Unification of monetary, fiscal, social, and countercyclical policies.
+• Plus a supranational authority whose decisions are binding on member states.
+• Walang contemporary organisation na tugma dito. Treat it as a theoretical endpoint, hindi bilang label na kailangang punan. Dito na talaga malinaw ang governance questions: sino ang gumagawa ng rules, sino ang nag-i-implement, sino ang nagmo-monitor, sino ang nag-a-ayos ng disputes, at sino ang accountable?
+
+6. Testing the ladder: does ASEAN fit? Ito yung pinaka-importanteng analytical move sa buong topic, kaya wag mo lang basta laktawan. Ang ASEAN Economic Community ay inilalarawan bilang isang single market and production base, na may ambisyon sa daloy ng goods, services, investment, capital, at skilled labour. So at first glance, sasabihin mo siguro, common market na ito ah. Pero tingnan mo nang mas malapitan.
+• Malalim: goods, services, investment, capital, at managed mobility ng ilang profession sa pamamagitan ng Mutual Recognition Arrangements.
+• Mababaw o wala: walang common external tariff, walang full free movement of workers, walang policy unification.
+
+===== PAGE 5 =====
+The point: hindi kasya ang ASEAN sa isang kahon. Mas malalim sa ilang dimensyon, mas mababaw sa iba. Kaya ang tamang gamit ng framework ni Balassa ay bilang measuring device, hindi bilang roadmap na kailangang sundan ng lahat. IF THE PROF ASKS SO IS ASEAN INTEGRATED OR NOT? The answer that shows you understood Balassa is that the question is malformed. Integration is not a yes or no. It is a set of dimensions, each with its own depth. The useful question is which barriers have actually been removed, and which have not.
+
+7. The common currency question Note muna: ang common currency ay hindi automatic na susunod na stage sa ladder ni Balassa. Extension ito papunta sa monetary integration, na kasama sa pinakamalalim niyang level. What countries gain
+
+1. No routine currency conversion between members.
+
+2. Less exchange rate uncertainty within the currency area.
+
+3. Greater price transparency, mas madaling ikumpara ang presyo.
+
+4. Deeper economic integration, kasi mas simple na ang transactions. Related but separate theory: Robert Mundell on optimum currency areas, also published in 1961. Banggitin mo lang, hindi mo na kailangang ituro. What countries give up A currency is not just what we use to buy coffee. Monetary policy is a policy instrument. Kaya kapag nag-share ka ng currency, hindi lang medium of exchange ang shinare mo, pati decision-making. Imagine two members. Country A is in recession and wants looser monetary conditions. Country B has high inflation and needs tighter conditions. Pero iisa lang ang monetary policy nila. Ito yung problem of asymmetric shocks. Kapag hindi ka makapag-adjust sa exchange rate o monetary policy, kailangan mong mag-adjust sa ibang paraan: labour mobility, fiscal policy, capital and financial mechanisms. The real trade-off More monetary integration in exchange for less independent monetary and exchange rate policy. Sa euro area, ang ECB ang nagpapatakbo ng iisang monetary policy, habang ang national governments ang may hawak pa rin ng fiscal policy sa loob ng common framework.
+
+===== PAGE 6 =====
+So hindi tama yung tanong na "maganda ba o hindi ang common currency?" Masyadong simple yun. Ang mas magandang tanong: gaano karaming national policy autonomy ang handang ibigay ng gobyerno kapalit ng mas malalim na integration?
+
+8. Where the theory meets the real world Balassa places increasing policy coordination, and at the deepest level policy unification, within his framework. Mas kumplikado ang totoong nangyari sa euro area.
+• Common monetary policy exists at the regional level through the ECB.
+• Important fiscal decisions remain at the national level.
+• Result: institutional tensions, dahil hindi pantay ang bilis ng paglalim ng iba't ibang dimensyon ng integration. Hindi mo sinasabing mali si Balassa. Ang sinasabi mo ay pinapayagan tayo ng euro area na i-test yung framework. Theory, case, test. Yun yung ginagawa natin sa PA 103.
+
+9. Describe, explain, predict
+• Describe: what level of integration are we looking at?
+• Explain: what mechanisms are producing the effects? Trade barriers, factor mobility, economies of scale, policy coordination, monetary integration.
+• Predict: if integration deepens, what new problems emerge? More policy spillovers, more coordination requirements, regional adjustment problems, fiscal and monetary questions, institutional questions.
+
+10. How Balassa connects to the others
+• Haas: the problem of how we theorise regional integration, including pretheories.
+• Mitrany: functional cooperation and the working peace system.
+• Etzioni: the development of political communities beyond the nation state.
+• Balassa: a framework for distinguishing degrees of economic integration. So kaya siya kasya sa PA 103 natutulungan tayo niyang itanong kung ano ba talaga ang na-integrate, gaano kalalim, sa anong mekanismo, at ano ang bunga nito para sa gobyerno.
+
+11. The administration of things Balikan yung linyang "the governance of men will soon be replaced by the administration of things." Mukhang tungkol sa bagay lang ang economic integration: tariffs, goods, capital, labour, currency, rules, standards.
+
+===== PAGE 7 =====
+Pero isipin mo kung ano talaga ang naaapektuhan ng mga bagay na yun. Kung didesisyunan natin kung sino ang pwedeng magtrabaho saan, saan pwedeng magtayo ng negosyo, paano gumagalaw ang capital, anong tariff ang applicable, anong monetary policy ang susundin, sino ang gumagawa ng common rules, at sino ang pwedeng kumontra sa rules na yun, ang inaapektuhan natin ay ang mga pagpipilian ng tao at ng gobyerno. So habang lumalalim ang integration, lalong nagiging mahirap paghiwalayin ang administration of economic things sa governance of people.
+
+12. Key terms, quick list
+• Economic integration: Both a process of abolishing discrimination between national economies and the resulting state of affairs.
+• Discrimination: Different treatment between economic units belonging to different national states. Not the social meaning.
+• Free trade area: Internal barriers removed, each member keeps its own external tariff.
+• Rules of origin: Rules determining which goods qualify for preferential treatment when members have different external tariffs.
+• Customs union: Free trade area plus a common external tariff.
+• Trade creation: Shift from a more expensive producer to a cheaper member.
+• Trade diversion: Shift from a cheaper outsider to a more expensive member because of preferential treatment.
+• Common market: Customs union plus free movement of factors of production.
+• Economic union: Common market plus harmonisation of national economic policies.
+• Total economic integration: Unification of monetary, fiscal, social and countercyclical policy, plus a binding supranational authority.
+• Asymmetric shock: An economic shock that affects member countries differently, a problem when they share one monetary policy.
+• Optimum currency area: Mundell's related question of when countries are actually suited to sharing a currency.
+
+13. Self check Kaya mo bang sagutin ito nang hindi tumitingin sa notes?
+
+1. What are the two ways Balassa defines economic integration?
+
+2. Give the difference between cooperation and integration in one sentence each.
+
+3. Name the one thing each level adds to the level before it.
+
+4. Why does a free trade area need rules of origin, and why does a customs union not?
+
+===== PAGE 8 =====
+5. Explain trade creation and trade diversion using one example each.
+
+6. Where does ASEAN sit on the ladder, and why is that question misleading?
+
+7. List two gains and two costs of sharing a currency.
+
+8. What does the euro area show us about Balassa's sequencing?
+
+9. At what point does economic integration become a question of governance?
+
+14. The closing question At what point does economic integration stop being just economics and become a question of governance? Is it when tariffs are removed? When countries adopt a common external tariff? When people and capital can move? When governments coordinate economic policy? Or only when some decisions become supranational? Baka ang sagot ay mas maaga pa pala nagsisimula ang governance question kaysa sa huling stage. Kasi sa tuwing sasabihin ng isang gobyerno na "hindi na namin ito magiging sariling desisyon lang," may nalikha na silang bagong governance problem.

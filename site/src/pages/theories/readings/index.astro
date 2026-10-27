@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PillarTabs from '../../../components/PillarTabs.astro';
+import { theoryTabs } from '../../../data/tabs';
+import { readings } from '../../../data/readings';
+import { clusters, clusterBySlug } from '../../../data/clusters';
+---
+<BaseLayout title="Reading list" pillar="theories" crumbs={[{ label: 'Theories', href: '/theories/' }, { label: 'Reading list' }]}>
+  <h1>Reading list</h1>
+  <PillarTabs tabs={theoryTabs} />
+  <div class="filters">
+    <label>Cluster <select id="f-cluster"><option value="">All</option>{clusters.map((c) => <option value={c.slug}>{c.name}</option>)}</select></label>
+    <label>Part <select id="f-part"><option value="">All</option><option value="class">Covered in class (1-18)</option><option value="not-yet">Not presented (19-29)</option></select></label>
+    <label>Notes <select id="f-notes"><option value="">All</option><option value="web">WEB</option><option value="slides">Class material</option></select></label>
+  </div>
+  <div class="tbl-wrap">
+    <table class="data" id="tbl">
+      <thead><tr><th>#</th><th>Author</th><th>Year</th><th>Title</th><th>Cluster</th><th>Notes</th></tr></thead>
+      <tbody>
+        {readings.map((r) => (
+          <tr data-cluster={r.cluster} data-part={r.covered} data-notes={r.notes === 'web' ? 'web' : 'slides'}>
+            <td>{r.num}</td><td>{r.author}</td><td>{r.year}</td>
+            <td><a href={`/theories/readings/${r.slug}/`}>{r.title}</a></td>
+            <td><span class="dot" style={`--dot:${clusterBySlug(r.cluster).color}`}></span>{clusterBySlug(r.cluster).name}</td>
+            <td>{r.notes === 'web' ? 'WEB' : 'Class material'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <script is:inline>
+    var sel = { cluster: 'f-cluster', part: 'f-part', notes: 'f-notes' };
+    function apply() {
+      document.querySelectorAll('#tbl tbody tr').forEach(function (tr) {
+        var ok = Object.keys(sel).every(function (k) { var v = document.getElementById(sel[k]).value; return !v || tr.dataset[k] === v; });
+        tr.hidden = !ok;
+      });
+    }
+    Object.keys(sel).forEach(function (k) { document.getElementById(sel[k]).addEventListener('change', apply); });
+  </script>
+</BaseLayout>

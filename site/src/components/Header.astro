@@ -1,0 +1,32 @@
+---
+import { clusters } from '../data/clusters';
+import { regions } from '../data/orgs';
+
+const { pillar } = Astro.props as { pillar?: string };
+---
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/">PA 103 Reviewer</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="main-nav" id="menu-btn">Menu</button>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      <div class="item">
+        <a class={`top theories ${pillar === 'theories' ? 'on' : ''}`} href="/theories/">Theories</a>
+        <div class="mega">
+          <a class="all" href="/theories/readings/">All 29 readings</a>
+          {clusters.map((c) => <a href={`/theories/clusters/${c.slug}/`}><span class="dot" style={`--dot:${c.color}`}></span>{c.name}</a>)}
+        </div>
+      </div>
+      <div class="item">
+        <a class={`top organizations ${pillar === 'organizations' ? 'on' : ''}`} href="/organizations/">Regional Organizations</a>
+        <div class="mega">
+          <a class="all" href="/organizations/all/">All 25 organizations</a>
+          {regions.map((r) => <a href={`/organizations/regions/#${r.slug}`}>{r.name}</a>)}
+        </div>
+      </div>
+      <div class="item"><a class={`top compare ${pillar === 'compare' ? 'on' : ''}`} href="/compare/">Compare</a></div>
+      <div class="item"><a class="top" href="/about/">About</a></div>
+    </nav>
+    <button class="search-btn" id="search-btn" aria-label="Search (press /)">Search <kbd>/</kbd></button>
+    <button class="theme-btn" id="theme-btn" aria-label="Toggle dark mode">Theme</button>
+  </div>
+</header>

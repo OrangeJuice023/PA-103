@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="About" crumbs={[{ label: 'About' }]}>
+  <h1>About this reviewer</h1>
+  <div class="prose">
+    <p>This site turns the notes in <code>01_FINAL_NOTES/</code> into a browsable reviewer. The notes are the source of truth. Edit them, rebuild, and the site updates.</p>
+    <h2>Status labels</h2>
+    <ul>
+      <li><b>CLASS</b>: the professor covered this reading in lecture (readings 1 to 18).</li>
+      <li><b>Not presented yet</b>: readings 19 to 29, and the organization reports.</li>
+      <li><b>WEB</b>: our note comes from outside research. It is cited and is never professor content.</li>
+      <li><b>Notes from class slides / reviewer PDF</b>: the note was written from course material.</li>
+      <li><b>DRAFT</b>: written but not reviewed. <b>DONE</b>: reviewed (none yet). <b>TODO / FLAG</b>: placeholder.</li>
+    </ul>
+    <h2>Things to know</h2>
+    <ul>
+      <li>Clusters and theory lenses are suggestions from the North Star, not the professor's grouping.</li>
+      <li>MECA and WAICO are placeholders because their names are unconfirmed. No details are invented.</li>
+      <li>Citations are corrected from general knowledge and not checked against the papers. Verify before graded use.</li>
+    </ul>
+  </div>
+</BaseLayout>

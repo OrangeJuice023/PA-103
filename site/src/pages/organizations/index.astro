@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import { orgTabs } from '../../data/tabs';
+import { regions, orgs, types } from '../../data/orgs';
+---
+<BaseLayout title="Regional Organizations" pillar="organizations" crumbs={[{ label: 'Regional Organizations' }]}>
+  <h1>Regional organizations</h1>
+  <p class="lead">{orgs.length} organizations from the student report list. Most are outside-research drafts until the groups present.</p>
+  <PillarTabs tabs={orgTabs} />
+  <h2>By region</h2>
+  <div class="grid">
+    {regions.map((r) => (
+      <a class="card org" href={`/organizations/regions/#${r.slug}`}>
+        <b>{r.name}</b><small>{orgs.filter((o) => o.region === r.slug).map((o) => o.acronym).join(', ')}</small>
+      </a>
+    ))}
+  </div>
+  <h2>By type</h2>
+  <div class="grid">
+    {types.map((t) => (
+      <a class="card org" href={`/organizations/types/#${t.slug}`}>
+        <b>{t.name}</b><small>{orgs.filter((o) => o.type === t.slug).length} organizations</small>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

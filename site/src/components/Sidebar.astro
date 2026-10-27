@@ -1,0 +1,40 @@
+---
+import { clusters } from '../data/clusters';
+import { readings } from '../data/readings';
+import { orgs, regions } from '../data/orgs';
+
+const { pillar } = Astro.props as { pillar: 'theories' | 'organizations' };
+const here = Astro.url.pathname;
+const isOn = (href: string) => here === href;
+const hasOn = (hrefs: string[]) => hrefs.some(isOn);
+---
+<nav class="side" aria-label={pillar === 'theories' ? 'Theories' : 'Organizations'}>
+  {pillar === 'theories' && clusters.map((c) => {
+    const rs = readings.filter((r) => r.cluster === c.slug);
+    const hrefs = [`/theories/clusters/${c.slug}/`, ...rs.map((r) => `/theories/readings/${r.slug}/`)];
+    return (
+      <details open={hasOn(hrefs)}>
+        <summary><span class="dot" style={`--dot:${c.color}`}></span>{c.name}</summary>
+        <ul>
+          <li><a href={hrefs[0]} aria-current={isOn(hrefs[0]) ? 'page' : undefined}>Cluster overview</a></li>
+          {rs.map((r) => (
+            <li><a href={`/theories/readings/${r.slug}/`} aria-current={isOn(`/theories/readings/${r.slug}/`) ? 'page' : undefined}>#{r.num} {r.author.split(',')[0]} {r.year}</a></li>
+          ))}
+        </ul>
+      </details>
+    );
+  })}
+  {pillar === 'organizations' && regions.map((rg) => {
+    const os = orgs.filter((o) => o.region === rg.slug);
+    return (
+      <details open={hasOn(os.map((o) => `/organizations/${o.slug}/`))}>
+        <summary>{rg.name}</summary>
+        <ul>
+          {os.map((o) => (
+            <li><a href={`/organizations/${o.slug}/`} aria-current={isOn(`/organizations/${o.slug}/`) ? 'page' : undefined}>{o.acronym}</a></li>
+          ))}
+        </ul>
+      </details>
+    );
+  })}
+</nav>

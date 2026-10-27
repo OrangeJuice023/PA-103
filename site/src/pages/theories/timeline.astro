@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import { theoryTabs } from '../../data/tabs';
+import { readings } from '../../data/readings';
+import { clusters, clusterBySlug } from '../../data/clusters';
+
+const sorted = [...readings].sort((a, b) => a.year - b.year || a.num - b.num);
+---
+<BaseLayout title="Timeline" pillar="theories" crumbs={[{ label: 'Theories', href: '/theories/' }, { label: 'Timeline' }]}>
+  <h1>Timeline of the readings</h1>
+  <PillarTabs tabs={theoryTabs} />
+  <p class="lead">Years follow the North Star. A few are flagged there for a second look (Puchala, Hayward, Nye 1965).</p>
+  <p class="ui">{clusters.map((c) => <span style="margin-right:12px;white-space:nowrap"><span class="dot" style={`--dot:${c.color}`}></span>{c.name}</span>)}</p>
+  <ul class="tl">
+    {sorted.map((r) => (
+      <li style={`--dot:${clusterBySlug(r.cluster).color}`}>
+        <span class="yr">{r.year}</span><a href={`/theories/readings/${r.slug}/`}>{r.author.split(',')[0]}: {r.title}</a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

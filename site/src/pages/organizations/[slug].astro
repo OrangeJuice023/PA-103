@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Badges from '../../components/Badges.astro';
+import { orgs, regionBySlug, typeBySlug } from '../../data/orgs';
+import { readingByNum } from '../../data/readings';
+import { clusterBySlug } from '../../data/clusters';
+import { orgNotes } from '../../lib/notes';
+import { render } from 'astro:content';
+
+export function getStaticPaths() {
+  return orgs.map((o) => ({ params: { slug: o.slug }, props: { o } }));
+}
+const { o } = Astro.props;
+const region = regionBySlug(o.region);
+const { note, story } = await orgNotes(o);
+const Note = note ? (await render(note)).Content : null;
+const Story = story ? (await render(story)).Content : null;
+const lens = o.readings.map(readingByNum);
+const headings = [
+  ...(Story ? [{ depth: 2, slug: 'story', text: 'Simplified story' }] : []),
+  { depth: 2, slug: 'note', text: 'Note' },
+  { depth: 2, slug: 'lens', text: 'Theory lens' },
+];
+const same = orgs.filter((x) => x.region === o.region);
+const i = same.findIndex((x) => x.slug === o.slug);
+const prev = same[i - 1], next = same[i + 1];
+---
+<BaseLayout title={o.acronym} pillar="organizations" headings={headings}
+  crumbs={[{ label: 'Regional Organizations', href: '/organizations/' }, { label: region.name, href: `/organizations/regions/#${region.slug}` }, { label: o.acronym }]}>
+  <h1>{o.name}{o.name_verified ? ` (${o.acronym})` : ''}</h1>
+  <Badges org={o} />
+  <dl class="glance">
+    <div><dt>Founded</dt><dd>{o.founded ?? 'See note'}{o.foundedNote ? ` (${o.foundedNote})` : ''}</dd></div>
+    <div><dt>Region</dt><dd>{region.name}</dd></div>
+    <div><dt>Type</dt><dd>{typeBySlug(o.type).name}</dd></div>
+    {o.predecessor && <div><dt>Predecessor</dt><dd>{o.predecessor}</dd></div>}
+    {o.successor && <div><dt>Successor</dt><dd>{o.successor}</dd></div>}
+  </dl>
+  {Story && <section><h2 id="story">Simplified story</h2><div class="prose"><Story /></div></section>}
+  <section><h2 id="note">Note</h2>{Note ? <div class="prose"><Note /></div> : <p>No note file found.</p>}</section>
+  <h2 id="lens">Theory lens</h2>
+  {lens.length ? (
+    <div>{lens.map((r) => <a class="chip t" href={`/theories/readings/${r.slug}/`} style={`border-color:${clusterBySlug(r.cluster).color}`}>#{r.num} {r.author.split(',')[0]} {r.year}</a>)}</div>
+  ) : <p>No lens assigned yet.</p>}
+  <p class="ui" style="color:var(--muted);font-size:.85rem">Suggested from the North Star "theory lens" column. Check it against the group's report.</p>
+  <div class="prevnext">
+    {prev ? <a href={`/organizations/${prev.slug}/`}><small>Previous in region</small>{prev.acronym}</a> : <span></span>}
+    {next ? <a href={`/organizations/${next.slug}/`}><small>Next in region</small>{next.acronym}</a> : <span></span>}
+  </div>
+</BaseLayout>

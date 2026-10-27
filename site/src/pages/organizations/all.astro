@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import { orgTabs } from '../../data/tabs';
+import { orgs, regions, types, regionBySlug, typeBySlug } from '../../data/orgs';
+
+const sorted = [...orgs].sort((a, b) => a.acronym.localeCompare(b.acronym));
+---
+<BaseLayout title="All organizations" pillar="organizations" crumbs={[{ label: 'Regional Organizations', href: '/organizations/' }, { label: 'All' }]}>
+  <h1>All organizations</h1>
+  <PillarTabs tabs={orgTabs} />
+  <div class="filters">
+    <label>Region <select id="f-region"><option value="">All</option>{regions.map((r) => <option value={r.slug}>{r.name}</option>)}</select></label>
+    <label>Type <select id="f-type"><option value="">All</option>{types.map((t) => <option value={t.slug}>{t.name}</option>)}</select></label>
+    <label>Search <input id="f-q" type="search" placeholder="name or reporter" /></label>
+  </div>
+  <div class="tbl-wrap">
+    <table class="data" id="tbl">
+      <thead><tr><th>Organization</th><th>Founded</th><th>Region</th><th>Type</th><th>Reporter</th><th>Status</th></tr></thead>
+      <tbody>
+        {sorted.map((o) => (
+          <tr data-region={o.region} data-type={o.type} data-q={`${o.acronym} ${o.name} ${o.reporter}`.toLowerCase()}>
+            <td><a href={`/organizations/${o.slug}/`}><b>{o.acronym}</b></a><br /><small>{o.name}</small></td>
+            <td>{o.founded ?? '—'}</td>
+            <td>{regionBySlug(o.region).name}</td>
+            <td>{typeBySlug(o.type).name}</td>
+            <td>{o.reporter}</td>
+            <td>{o.name_verified ? 'WEB draft' : 'TODO: name unverified'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <script is:inline>
+    function apply() {
+      var rg = document.getElementById('f-region').value, ty = document.getElementById('f-type').value, q = document.getElementById('f-q').value.toLowerCase();
+      document.querySelectorAll('#tbl tbody tr').forEach(function (tr) {
+        tr.hidden = !((!rg || tr.dataset.region === rg) && (!ty || tr.dataset.type === ty) && (!q || tr.dataset.q.indexOf(q) >= 0));
+      });
+    }
+    ['f-region', 'f-type'].forEach(function (id) { document.getElementById(id).addEventListener('change', apply); });
+    document.getElementById('f-q').addEventListener('input', apply);
+  </script>
+</BaseLayout>

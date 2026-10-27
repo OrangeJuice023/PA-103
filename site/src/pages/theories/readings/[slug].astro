@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Badges from '../../../components/Badges.astro';
+import { readings } from '../../../data/readings';
+import { clusterBySlug } from '../../../data/clusters';
+import { orgsForReading } from '../../../data/orgs';
+import { readingNotes } from '../../../lib/notes';
+import { render } from 'astro:content';
+
+export function getStaticPaths() {
+  return readings.map((r) => ({ params: { slug: r.slug }, props: { r } }));
+}
+const { r } = Astro.props;
+const c = clusterBySlug(r.cluster);
+const { web, topic, story } = await readingNotes(r);
+const Main = web ? (await render(web)).Content : null;
+const Topic = topic ? (await render(topic)).Content : null;
+const Story = story ? (await render(story)).Content : null;
+const headings = [
+  ...(Story ? [{ depth: 2, slug: 'story', text: 'Simplified story' }] : []),
+  ...(Main ? [{ depth: 2, slug: 'note', text: 'Reading note' }] : []),
+  ...(Topic ? [{ depth: 2, slug: 'class-note', text: 'Class-sourced note' }] : []),
+  { depth: 2, slug: 'seen-in', text: 'Seen in' },
+];
+const sameCluster = readings.filter((x) => x.cluster === r.cluster);
+const i = sameCluster.findIndex((x) => x.num === r.num);
+const prev = sameCluster[i - 1], next = sameCluster[i + 1];
+const seen = orgsForReading(r.num);
+const short = r.author.split(',')[0];
+---
+<BaseLayout title={`${short} (${r.year})`} pillar="theories" headings={headings}
+  crumbs={[{ label: 'Theories', href: '/theories/' }, { label: c.name, href: `/theories/clusters/${c.slug}/` }, { label: `${short} ${r.year}` }]}>
+  <p class="ui"><span class="dot" style={`--dot:${c.color}`}></span><a href={`/theories/clusters/${c.slug}/`}>{c.name}</a> &middot; Reading #{r.num}</p>
+  <h1>{r.title}</h1>
+  <p class="lead">{r.author}, {r.year}</p>
+  <Badges reading={r} />
+  {Story && <section><h2 id="story">Simplified story</h2><div class="prose"><Story /></div></section>}
+  {Main && <section><h2 id="note">Reading note</h2><div class="prose"><Main /></div></section>}
+  {Topic && <section><h2 id="class-note">Class-sourced note</h2><div class="prose"><Topic /></div></section>}
+  {!Main && !Topic && <p class="banner">No note exists for this reading yet.</p>}
+  <h2 id="seen-in">Seen in</h2>
+  {seen.length ? <div>{seen.map((o) => <a class="chip o" href={`/organizations/${o.slug}/`}>{o.acronym}</a>)}</div> : <p>No organization is linked to this reading yet.</p>}
+  <p class="ui" style="color:var(--muted);font-size:.85rem">Links come from the North Star "theory lens" column. They are suggestions, not the professor's mapping.</p>
+  <div class="prevnext">
+    {prev ? <a href={`/theories/readings/${prev.slug}/`}><small>Previous in cluster</small>{prev.author.split(',')[0]} {prev.year}</a> : <span></span>}
+    {next ? <a href={`/theories/readings/${next.slug}/`}><small>Next in cluster</small>{next.author.split(',')[0]} {next.year}</a> : <span></span>}
+  </div>
+</BaseLayout>

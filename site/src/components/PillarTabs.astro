@@ -1,0 +1,7 @@
+---
+const { tabs } = Astro.props as { tabs: { label: string; href: string }[] };
+const here = Astro.url.pathname;
+---
+<nav class="tabs" aria-label="Views">
+  {tabs.map((t) => <a href={t.href} aria-current={here === t.href ? 'page' : undefined}>{t.label}</a>)}
+</nav>

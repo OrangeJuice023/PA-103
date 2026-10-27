@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  pillar?: 'theories' | 'organizations' | 'compare';
+  crumbs?: { label: string; href?: string }[];
+  headings?: { depth: number; slug: string; text: string }[];
+}
+const { title, description = 'Study reviewer for PA 103: theories of regional integration and regional organizations.', pillar, crumbs = [], headings = [] } = Astro.props;
+const side = pillar === 'theories' || pillar === 'organizations';
+const toc = headings.filter((h) => h.depth === 2);
+const shellClass = ['shell', side ? '' : 'no-side', side && toc.length === 0 ? 'no-toc' : ''].join(' ');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === 'PA 103 Reviewer' ? title : `${title} | PA 103 Reviewer`}</title>
+    <meta name="description" content={description} />
+    <script is:inline>
+      try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+  </head>
+  <body class={pillar === 'theories' ? 'theories-pillar' : pillar === 'organizations' ? 'orgs-pillar' : ''}>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header pillar={pillar} />
+    <div class={shellClass}>
+      {side && <Sidebar pillar={pillar!} />}
+      <main id="main" data-pagefind-body>
+        {crumbs.length > 0 && (
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            {crumbs.map((c) => (<><span aria-hidden="true">/</span>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</>))}
+          </nav>
+        )}
+        <slot />
+      </main>
+      {side && toc.length > 0 && (
+        <aside class="toc" aria-label="On this page">
+          <h4>On this page</h4>
+          {toc.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+        </aside>
+      )}
+    </div>
+    <nav class="bottom-bar" aria-label="Quick">
+      <a href="/theories/">Theories</a><a href="/organizations/">Organizations</a><a href="/compare/">Compare</a>
+    </nav>
+    <footer class="site">Study material, not a validated source. Outside research is labelled WEB and is not professor content.</footer>
+
+    <dialog class="search" id="search-dialog" aria-label="Search">
+      <div id="search"></div>
+      <form method="dialog"><button>Close</button></form>
+    </dialog>
+
+    <script is:inline>
+      var menu = document.getElementById('menu-btn'), nav = document.getElementById('main-nav');
+      menu.addEventListener('click', function () { var o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); });
+      document.getElementById('theme-btn').addEventListener('click', function () {
+        var d = document.documentElement, dark = getComputedStyle(d).getPropertyValue('--bg').trim() === '#131217';
+        var next = dark ? 'light' : 'dark'; d.dataset.theme = next; try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+      var dlg = document.getElementById('search-dialog'), loaded = false;
+      function openSearch() {
+        dlg.showModal();
+        if (loaded) return; loaded = true;
+        var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/pagefind/pagefind-ui.css'; document.head.appendChild(css);
+        var js = document.createElement('script'); js.src = '/pagefind/pagefind-ui.js';
+        js.onload = function () { new PagefindUI({ element: '#search', showImages: false, autofocus: true }); };
+        js.onerror = function () { document.getElementById('search').textContent = 'Search index is only built in the production build (npm run build).'; };
+        document.body.appendChild(js);
+      }
+      document.getElementById('search-btn').addEventListener('click', openSearch);
+      document.addEventListener('keydown', function (e) {
+        var tag = (e.target && e.target.tagName) || '';
+        if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(tag)) { e.preventDefault(); openSearch(); }
+      });
+    </script>
+  </body>
+</html>

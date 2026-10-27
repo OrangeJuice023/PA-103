@@ -1,0 +1,311 @@
+
+
+===== PAGE 1 =====
+The Study of Regional Integration: 
+Reflections on the Joy and Anguish of Pretheorizing
+Ernst B. Haas (1970)
+Joshka Uriel G. Agaloos
+Rhon Andre P.  Montero
+PA 103 MRU
+
+===== PAGE 2 =====
+Outline
+I. Why Study Regional Integration?
+II. Empirical Generalizations and Their Limits
+III. Three Pretheories of Regional Integration
+IV. Toward a Dependent Variable
+V. Toward a Theory?
+
+===== PAGE 3 =====
+I. Why Study Regional Integration?
+
+===== PAGE 4 =====
+Why Study Regional Integration?
+Historical Context
+The study emerged from the rise of systematic social science in the U.S. and
+political efforts to unify Europe after WWII
+Core Objective
+To explain the voluntary, noncoercive creation of larger political  units where
+states "self-consciously eschew the use of force" in their relations.
+Shifts attention away from concepts such as sovereignty and military power
+toward tasks, transactions, perceptions, and learning. 
+The main reason for studying regional integration is normative.
+
+===== PAGE 5 =====
+Defining the Field
+Integration must be distinguished from regionalism, regional cooperation,
+regional organizations, movements, systems, and subsystems.   to avoid
+confusion. 
+Regional Integration is concerned with the study of how and why states cease
+to be wholly sovereign, voluntarily "mingling and merging" to acquire new
+techniques for resolving conflict.
+Integration is concerned with outcomes
+Integration is viewed as a process leading to the creation of a political
+community.
+
+===== PAGE 6 =====
+Evaluating 15 Years of Research (1955-1970)
+Existing theories are evaluated on three criteria: 
+Their abilitity to describe what happens
+Explain why stages occur
+Predict future outcomes
+Haas (1970) notes that at this stage, no theory fully meets all criteria.
+He posits the following evaluative questions:
+Have studies yielded empirically founded, universal truths?
+Do generalizations apply to all regions or only specific locales?
+What is the level of methodological and epistemological rigor in the field?
+Do the theories actually possess substantial explanatory power?
+
+===== PAGE 7 =====
+What does "noncoercive only" rule out?
+
+===== PAGE 8 =====
+II. Empirical Generalizations and Their Limits
+
+===== PAGE 9 =====
+After fifteen years of research, what has
+the field actually found?
+
+===== PAGE 10 =====
+Empirical Generalization
+“Groups of variables so related to each other as to explain successfully some
+outcome but not justified in terms of more comprehensive intellectual
+structure.”
+1.  It’s a group of variables
+2. Their link successfully explains an outcome. It works empirically
+(observation/experience)
+3. But it’s not part of a larger theory. It’s floating.
+
+===== PAGE 11 =====
+The Evidence Pile
+13 verified findings, grouped: Global, Socialist blocs, Western Europe/EEC,
+Late-developing (Africa/Latin America), External world. 
+Highlights:
+Common markets = strongest driver for Regional Integration
+Perception of fairness determines whether interdependence feels
+good/bad
+In Africa, Regional Integration is mostly symbolic
+The effect of outside (exogenous) powers is unpredictable
+Overall, Haas (1970) calls it a "mixed bag", because these reside in different
+levels of abstraction, unranked and unconnected.
+
+===== PAGE 12 =====
+Gaps and Problems
+The truths in the Empirical Generalizations are multilayered in meaning and
+implication. 
+“One of the major problems implicit in this list of findings is the dependence of
+most propositions on a number of explicit and implicit assumptions made prior
+to the initiation of research. There is already a theoretical basis to the mere
+listing of relevant variables. The findings are only as strong as the assumptions,
+and the assumptions cannot be made evident without looking at the theories
+which inspired them. This is true of the measures and indicators embedded in
+various assumptions.”
+Indefinite nature of the end state. Where is regional integration supposed to
+end?
+
+===== PAGE 13 =====
+4 Major Gaps in Factual and Conceptual Knowledge
+1. Do variables explaining the initiation of a union also explain its maintenance, as
+we seem to have assumed?
+2. Must we asssume--as we have--that decision-making styles at the national
+level must be congruent with those at the regional level?
+3. Are processes of integration in the underdeveloped world so different from
+those in the West that we need two different theories or models? This raises
+the important issue of the relative weight to be given to the variables in each
+geographical setting.
+4. How do actors learn? Do Perceptions of benefits from changing transactions
+affect the definition of interests? Is there some other process of socialization at
+work?
+
+===== PAGE 14 =====
+Is unranked data useful without a
+theory?
+
+===== PAGE 15 =====
+III. Three Pretheories of Regional Integration
+
+===== PAGE 16 =====
+Overview
+Three conventions (Federalism, Communications, and Neo-functionalism) are
+not yet fully validated theories.
+They serve as "pretheories" that define the variables and research strategies
+to study integration. 
+Each approach postulates different causal links between variables
+They also rely on distinct methodologies (aggregate data survey, case studies)
+
+===== PAGE 17 =====
+The Federalist Approach
+Assumers that political purposes and institutions are transferable from the
+national to the regional level.
+It is preoccupied with institution-building, constitutional design, methods of
+representation, and the division of powers.
+It is divided between
+Ideological activists (focused on realizing federation)
+theorist-observers (focused on tracing federalizing processes)
+The pure activist approach has been discredited in Europe and Africa while
+theorists have moved closer to observing "processes" similar to neo-
+functionalism.
+
+===== PAGE 18 =====
+The Communications Approach
+It applies cybernetic theory  to human groupes, assuming that social
+processes follow the same laws of transaction and response. 
+It uses the volume of transactions (trade, mail, tourist flows) as the primary
+measure of community formation. 
+It seeks to explain the emergence of a "security community"
+It is better at retroactive explanation than prediction and often ignores the
+actual political content of messages.
+It measures correlation, not causation. 
+Transaction volume → trust → Security Community
+
+===== PAGE 19 =====
+T he Neo-Functional Approach
+Borrows behavior patterns from pluralistic national states to explain regional-
+level interactions.
+It stressess self-interest and incremental decision-making.
+Spillover - Work in one problem leads to unintended consequences and
+demands for further integration in new sectors.
+It leads to the creation of a political community.
+Works when applied to Europe, mostly predicts failures elsewhere.
+
+===== PAGE 20 =====
+E ach theory picks a finish line
+before collecting data
+
+===== PAGE 21 =====
+Why can’t we just combine them?
+
+===== PAGE 22 =====
+IV. Toward a Dependent Variable
+
+===== PAGE 23 =====
+Dependent Variable
+The outcome that a theory is trying to explain or predict
+How does a successful regional integration look like?
+
+===== PAGE 24 =====
+No Agreed Dependent Variable
+The field's findings sit at inconsistent levels of abstraction. They are imperfectly
+"integrated" knowledge
+They are nonadditive. 
+The deeper cause: no agreement on what the dependent variable even is.
+Without a shared, observable dependent variable, findings from different
+research traditions can never actually be combined. They were never
+measuring the same thing
+
+===== PAGE 25 =====
+3 Rival Finish Lines
+Federalism's endpoint
+Federal union (a written constitution, divided powers, like the US or
+Switzerland)
+Communications theory's endpoint
+Security community (amalgamated or pluralistic; a group that has stopped
+expecting war with each other)
+Neo-functionalism's endpoint: 
+Political community / political union (narrower, assumes central institutions
+and progressive centralization)
+
+===== PAGE 26 =====
+None of them is a true dependent variable. They
+cannot be observed or measured to occurr in
+reality
+
+===== PAGE 27 =====
+First alternative attempt: Scales as Dependent Variables
+Instead of one single ideal-type endpoint, use quantitative multidimensional
+scales
+The end state becomes a "point" on a scale, or a convergence of several
+scales measuring different dimensions
+Problem:
+There’s disagreement about which variables belong in the mix
+It still assumes progress is always toward "higher" scores, foreclosing
+other kinds of outcomes
+It is useful as a methodological aid, but not itself an answer to the
+dependent-variable problem
+
+===== PAGE 28 =====
+Second alternative attempt: Lindberg & Scheingold's
+three outcomes
+Leon Lindberg and Stuart Scheingold propose three possible outcomes for
+any given integrative task:
+Fulfillment — the task is achieved
+Retraction — disintegration, the task backslides
+Extension — the task spreads into areas not originally anticipated
+Applied originally to the EEC/Euratom specifically, Haas suggests it could
+extend to the wider collectivity of organizations around a bloc
+Still needs a master concept to sum results across many issue areas — this is
+the bridge to Haas's own fix
+
+===== PAGE 29 =====
+What are we trying to propose to explain
+or predict in the first place?
+
+===== PAGE 30 =====
+R egional State
+O nce center, hierararchical
+F ix Layer 1: 3 Heuristic Terminal Conditions
+R egional Commune
+N o center, diffuse
+A ssymetrical Regional
+Overlap
+M ultiple uneven centers
+Illustration of possible temporary result
+
+===== PAGE 31 =====
+The measuring stick to track the progress of the three. 
+Authority
+Has authority moved from national to regional institutions?
+Legitimacy
+Has citizens accepted the regional authority as rightful?
+F ix Layer 2: authority-legitimacy transfer
+
+===== PAGE 32 =====
+One sector   →    All sectors    →    Region as a whole 
+(Fullfillment/Extension/Retraction)
+3-Step Evaluative Ladder (How to apply it)
+1. What is the mix of variables explaining a trend in one sector
+a. Pick an area and identify the variables
+b. Use concepts like spillover, elite responsiveness, bargaining style
+2. What’s the mix of all integrative and disintegrative trends across all sectors in a
+region? How do they all add up?
+a. Use the 3 tools (fulfillment, extension, retraction)
+b. Shows that a region is not moving in one direction
+
+===== PAGE 33 =====
+One sector   →    All sectors    →    Region as a whole 
+(Fullfillment/Extension/Retraction)
+3-Step Evaluative Ladder (How to apply it)
+3. What’s the sum for the region as a whole?
+a. Apply Authority-Legitimacy Transfer to the whole region 
+b. Which of the three terminal condtions is this region actually approaching?
+
+===== PAGE 34 =====
+Agriculture   →    uneven    →    matches asymmetrical overlap
+ 
+H igh transfer, energy low
+E EC Example
+Caveat: terminal conditions have "no real-life counterparts"; ladder still needs
+human judgment calls.
+
+===== PAGE 35 =====
+Is an admittedly imaginary dependent
+variable still useful, or just a
+sophisticated way of admitting defeat?
+
+===== PAGE 36 =====
+O pen Questions Left Behind
+1. Do forces that start integration also sustain it?
+2. Must national and regional politics move in sync? (Haas: no — EEC kept
+integrating economically while national politics got more nationalist)
+3. Separate model for developing world? (Haas: same variables, different
+weights)
+4. How does "learning" actually work? (Haas's admitted biggest black box)
+
+===== PAGE 37 =====
+The Pitch and the Pivot
+Computer simulation proposed — forces explicit, codeable assumptions
+Closing speculation: fragmented multilayered world vs. concentrated regional
+blocs — which is safer for peace? 
+Does this normative leap actually follow from the
+analysis, or is it a value judgment stepping in where
+the definitions run out?

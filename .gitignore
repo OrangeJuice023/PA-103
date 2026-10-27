@@ -1,0 +1,5 @@
+node_modules/
+site/dist/
+site/.astro/
+# Over GitHub's 100 MB file limit. Keep locally; the extracted text is committed.
+00_RAW_SOURCES/PA 103 - Haas The Joys and Anguish of Pretheorzing (1).pdf

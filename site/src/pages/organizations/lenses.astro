@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import Cards from '../../components/Cards.astro';
+import { orgTabs } from '../../data/tabs';
+import { orgs } from '../../data/orgs';
+import { clusters } from '../../data/clusters';
+import { readings } from '../../data/readings';
+
+const groups = clusters.map((c) => {
+  const nums = new Set(readings.filter((r) => r.cluster === c.slug).map((r) => r.num));
+  return { c, list: orgs.filter((o) => o.readings.some((n) => nums.has(n))) };
+}).filter((g) => g.list.length > 0);
+const none = orgs.filter((o) => o.readings.length === 0);
+---
+<BaseLayout title="Organizations by theory lens" pillar="organizations" crumbs={[{ label: 'Regional Organizations', href: '/organizations/' }, { label: 'By theory lens' }]}>
+  <h1>Organizations by theory lens</h1>
+  <PillarTabs tabs={orgTabs} />
+  <p class="lead">An organization shows up under every cluster that one of its suggested readings belongs to. The lens column in the North Star is a suggestion; check it against each group's report.</p>
+  {groups.map(({ c, list }) => (
+    <section>
+      <h2 id={c.slug}><span class="dot" style={`--dot:${c.color}`}></span><a href={`/theories/clusters/${c.slug}/`}>{c.name}</a></h2>
+      <div class="grid">{list.map((o) => <Cards org={o} />)}</div>
+    </section>
+  ))}
+  {none.length > 0 && (<section><h2>No lens yet</h2><div class="grid">{none.map((o) => <Cards org={o} />)}</div></section>)}
+</BaseLayout>

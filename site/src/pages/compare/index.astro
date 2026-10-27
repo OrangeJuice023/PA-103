@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { clusters } from '../../data/clusters';
+import { readings } from '../../data/readings';
+import { orgs, regions, regionBySlug, typeBySlug } from '../../data/orgs';
+
+const shownRegions = regions.filter((r) => orgs.some((o) => o.region === r.slug && o.name_verified));
+const cell = (clusterSlug: string, regionSlug: string) => {
+  const nums = new Set(readings.filter((r) => r.cluster === clusterSlug).map((r) => r.num));
+  return orgs.filter((o) => o.region === regionSlug && o.readings.some((n) => nums.has(n)));
+};
+const ladder = [
+  { step: '1. Free trade area', note: 'Tariffs removed between members.', orgs: ['lafta'] },
+  { step: '2. Customs union', note: 'Plus a common external tariff.', orgs: ['mercosur', 'eac'] },
+  { step: '3. Common market', note: 'Plus free movement of capital and labor.', orgs: ['caricom'] },
+  { step: '4. Economic union', note: 'Plus harmonized economic policies.', orgs: ['eu'] },
+  { step: '5. Total economic integration', note: 'Plus a single supranational authority.', orgs: [] as string[] },
+];
+const data = Object.fromEntries(orgs.filter((o) => o.name_verified).map((o) => [o.slug, {
+  acronym: o.acronym, name: o.name, founded: o.founded ?? 'see note', region: regionBySlug(o.region).name,
+  type: typeBySlug(o.type).name, reporter: o.reporter,
+  lens: o.readings.map((n) => readings.find((r) => r.num === n)!).map((r) => `${r.author.split(',')[0]} ${r.year}`).join(', ') || 'none yet',
+}]));
+const list = orgs.filter((o) => o.name_verified);
+---
+<BaseLayout title="Compare" pillar="compare" crumbs={[{ label: 'Compare' }]}>
+  <h1>Compare</h1>
+  <p class="lead">Tools that cut across the two pillars.</p>
+
+  <h2 id="map">Theory to organization map</h2>
+  <p>Clusters down, regions across. Each cell lists the organizations whose suggested readings fall in that cluster.</p>
+  <div class="tbl-wrap">
+    <table class="data">
+      <thead><tr><th>Cluster</th>{shownRegions.map((r) => <th>{r.name}</th>)}</tr></thead>
+      <tbody>
+        {clusters.map((c) => (
+          <tr>
+            <th scope="row"><span class="dot" style={`--dot:${c.color}`}></span><a href={`/theories/clusters/${c.slug}/`}>{c.name}</a></th>
+            {shownRegions.map((r) => <td>{cell(c.slug, r.slug).map((o) => <a class="chip o" href={`/organizations/${o.slug}/`}>{o.acronym}</a>)}</td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="balassa">Balassa stages</h2>
+  <p class="banner">The placement of organizations on the ladder is my suggestion for study, not from the notes. Check each organization's note before relying on it. Many of these only aim at the stage shown.</p>
+  <div class="ladder">
+    {ladder.map((l) => (
+      <div>
+        <div class="step">{l.step}<small>{l.note}</small></div>
+        <div>{l.orgs.length ? l.orgs.map((s) => { const o = orgs.find((x) => x.slug === s)!; return <a class="chip o" href={`/organizations/${o.slug}/`}>{o.acronym}</a>; }) : <span class="ui" style="color:var(--muted)">No organization placed</span>}</div>
+      </div>
+    ))}
+  </div>
+  <p><a href="/theories/readings/balassa-1961/">Read the Balassa note</a></p>
+
+  <h2 id="side-by-side">Side by side</h2>
+  <div class="filters">
+    <label>A <select id="sa">{list.map((o) => <option value={o.slug} selected={o.slug === 'eu'}>{o.acronym}</option>)}</select></label>
+    <label>B <select id="sb">{list.map((o) => <option value={o.slug} selected={o.slug === 'asean'}>{o.acronym}</option>)}</select></label>
+  </div>
+  <div class="tbl-wrap"><table class="data" id="cmp"></table></div>
+  <script is:inline define:vars={{ data }}>
+    var rows = [['Name', 'name'], ['Founded', 'founded'], ['Region', 'region'], ['Type', 'type'], ['Suggested theory lens', 'lens'], ['Reporter', 'reporter']];
+    function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+    function draw() {
+      var a = data[document.getElementById('sa').value], b = data[document.getElementById('sb').value];
+      var h = '<thead><tr><th></th><th>' + esc(a.acronym) + '</th><th>' + esc(b.acronym) + '</th></tr></thead><tbody>';
+      rows.forEach(function (r) { h += '<tr><th scope="row">' + r[0] + '</th><td>' + esc(a[r[1]]) + '</td><td>' + esc(b[r[1]]) + '</td></tr>'; });
+      document.getElementById('cmp').innerHTML = h + '</tbody>';
+    }
+    document.getElementById('sa').addEventListener('change', draw);
+    document.getElementById('sb').addEventListener('change', draw);
+    draw();
+  </script>
+</BaseLayout>

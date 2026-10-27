@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PillarTabs from '../../components/PillarTabs.astro';
+import { theoryTabs } from '../../data/tabs';
+import { fiveQuestions } from '../../data/clusters';
+import { readings } from '../../data/readings';
+import { readingNotes, fiveAnswers } from '../../lib/notes';
+
+const rows = await Promise.all(readings.map(async (r) => {
+  const { web } = await readingNotes(r);
+  return { r, a: fiveAnswers(web?.body) };
+}));
+const short = (s: string | null) => (s ? (s.length > 190 ? s.slice(0, 187) + '...' : s) : null);
+---
+<BaseLayout title="Five-question matrix" pillar="theories" crumbs={[{ label: 'Theories', href: '/theories/' }, { label: 'Five-question matrix' }]}>
+  <h1>Five-question matrix</h1>
+  <PillarTabs tabs={theoryTabs} />
+  <p class="lead">Every reading answers the same five questions, so they can be compared side by side. Answers are cut short here; open a reading for the full note. A dash means the note has no answer in that format yet.</p>
+  <div class="tbl-wrap">
+    <table class="data">
+      <thead><tr><th>Reading</th>{fiveQuestions.map((q) => <th>{q}</th>)}</tr></thead>
+      <tbody>
+        {rows.map(({ r, a }) => (
+          <tr>
+            <th scope="row"><a href={`/theories/readings/${r.slug}/`}>#{r.num} {r.author.split(',')[0]} {r.year}</a></th>
+            {a.map((x) => <td class="q">{short(x) ?? '—'}</td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</BaseLayout>

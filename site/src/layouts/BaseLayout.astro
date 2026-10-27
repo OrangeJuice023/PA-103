@@ -61,7 +61,7 @@ const shellClass = ['shell', side ? '' : 'no-side', side && toc.length === 0 ? '
       var menu = document.getElementById('menu-btn'), nav = document.getElementById('main-nav');
       menu.addEventListener('click', function () { var o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); });
       document.getElementById('theme-btn').addEventListener('click', function () {
-        var d = document.documentElement, dark = getComputedStyle(d).getPropertyValue('--bg').trim() === '#131217';
+        var d = document.documentElement, dark = getComputedStyle(d).getPropertyValue('--is-dark').trim() === '1';
         var next = dark ? 'light' : 'dark'; d.dataset.theme = next; try { localStorage.setItem('theme', next); } catch (e) {}
       });
       var dlg = document.getElementById('search-dialog'), loaded = false;

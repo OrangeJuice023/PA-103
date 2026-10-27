@@ -9,22 +9,31 @@ const verified = orgs.filter((o) => o.name_verified).length;
 const regionCount = new Set(orgs.filter((o) => o.name_verified).map((o) => o.region)).size;
 ---
 <BaseLayout title="PA 103 Reviewer" description="Study reviewer for PA 103: theories of regional integration and regional organizations.">
-  <h1>PA 103 Reviewer</h1>
-  <p class="lead">Two parts of the course, linked to each other. Pick a door, or press <kbd>/</kbd> to search.</p>
+  <section class="hero">
+    <h1>PA 103 Reviewer</h1>
+    <p class="lead">Theories of regional integration, and the organizations that put them to the test.</p>
+  </section>
   <div class="doors">
     <a class="door t" href="/theories/">
+      <small>Part A</small>
       <h2>Theories</h2>
       <p>{readings.length} readings in {clusters.length} clusters, from Mitrany to Tarzi.</p>
+      <span class="go">Explore theories &rsaquo;</span>
     </a>
     <a class="door o" href="/organizations/">
+      <small>Part B</small>
       <h2>Regional Organizations</h2>
-      <p>{orgs.length} organizations in {regionCount} regions, each tied back to a theory.</p>
+      <p>{orgs.length} organizations across {regionCount} regions, each tied back to a theory.</p>
+      <span class="go">Explore organizations &rsaquo;</span>
     </a>
   </div>
+  <p class="lead" style="text-align:center;font-size:1rem;margin:0 auto 8px">Press <kbd>/</kbd> to search anything.</p>
+
   <h2>Where the notes stand</h2>
-  <ul class="ui">
-    <li>{readings.length} readings: {readings.length - fromWeb} have notes from class material (slides or the reviewer PDF), {fromWeb} are outside research (WEB).</li>
-    <li>{verified} organizations have a drafted WEB note. {orgs.length - verified} are placeholders because the name is not confirmed yet.</li>
-    <li>Nothing is marked DONE yet. Everything here is a draft to check against the professor's slides.</li>
-  </ul>
+  <div class="facts">
+    <div class="fact"><b>{readings.length - fromWeb}</b><span>readings with notes from class material</span></div>
+    <div class="fact"><b>{fromWeb}</b><span>readings with outside research (WEB)</span></div>
+    <div class="fact"><b>{verified}</b><span>organization drafts ({orgs.length - verified} placeholders with unconfirmed names)</span></div>
+    <div class="fact"><b>0</b><span>notes reviewed (DONE). All are drafts to check against the slides.</span></div>
+  </div>
 </BaseLayout>

@@ -10,8 +10,8 @@ const hubs = [
   <canvas id="world" role="img" aria-label="Pixel-art world map with pulsing points across regions"></canvas>
 </div>
 <style>
-  .worldmap { margin: 28px auto 8px; max-width: 920px; }
-  canvas { display: block; width: 100%; aspect-ratio: 144 / 57; image-rendering: pixelated; }
+  .worldmap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: .8; }
+  canvas { display: block; width: 100%; min-width: 560px; aspect-ratio: 144 / 57; image-rendering: pixelated; }
 </style>
 <script is:inline define:vars={{ WORLD, hubs }}>
   (function () {

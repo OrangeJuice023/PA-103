@@ -142,7 +142,9 @@ main { padding-top: 28px; min-width: 0; }
 .glance dt { font-size: .7rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 600; margin-bottom: 2px; } .glance dd { margin: 0; font-weight: 500; }
 
 /* home */
-.hero { text-align: center; padding: 48px 0 8px; }
+.hero { position: relative; overflow: hidden; border-radius: 28px; min-height: clamp(300px, 44vw, 440px); display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 8px; background: var(--surface); box-shadow: var(--shadow); }
+.hero-fade { position: absolute; inset: 0; background: radial-gradient(ellipse 55% 50% at 50% 50%, var(--surface) 0%, color-mix(in srgb, var(--surface) 75%, transparent) 45%, transparent 100%); }
+.hero-text { position: relative; padding: 24px; }
 .hero h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); letter-spacing: -0.04em; margin: 0 0 .5rem; }
 .hero .lead { margin: 0 auto; font-size: 1.35rem; }
 .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 40px 0 16px; }

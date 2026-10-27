@@ -11,10 +11,13 @@ const regionCount = new Set(orgs.filter((o) => o.name_verified).map((o) => o.reg
 ---
 <BaseLayout title="PA 103 Reviewer" description="Study reviewer for PA 103: theories of regional integration and regional organizations.">
   <section class="hero">
-    <h1>PA 103 Reviewer</h1>
-    <p class="lead">Theories of regional integration, and the organizations that put them to the test.</p>
+    <WorldMap />
+    <div class="hero-fade"></div>
+    <div class="hero-text">
+      <h1>PA 103 Reviewer</h1>
+      <p class="lead">Theories of regional integration, and the organizations that put them to the test.</p>
+    </div>
   </section>
-  <WorldMap />
   <div class="doors">
     <a class="door t" href="/theories/">
       <small>Part A</small>
